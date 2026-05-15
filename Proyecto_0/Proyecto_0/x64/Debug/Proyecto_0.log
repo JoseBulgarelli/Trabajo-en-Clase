@@ -1,5 +1,0 @@
-﻿  Proyecto_0.cpp
-C:\Users\Jose\OneDrive - Estudiantes ITCR\TEC\Estructuras de Datos\Proyecto_0\Proyecto_0.cpp(654,87): warning C4244: '+=': conversión de 'time_t' a 'int'; posible pérdida de datos
-C:\Users\Jose\OneDrive - Estudiantes ITCR\TEC\Estructuras de Datos\Proyecto_0\Proyecto_0.cpp(261,25): warning C4101: 'posicionArea': variable local sin referencia
-C:\Users\Jose\OneDrive - Estudiantes ITCR\TEC\Estructuras de Datos\Proyecto_0\Area.h(126,1): warning C4715: 'Area::posicionVentanilla': no todas las rutas de acceso de control devuelven un valor
-  Proyecto_0.vcxproj -> C:\Users\Jose\OneDrive - Estudiantes ITCR\TEC\Estructuras de Datos\Proyecto_0\x64\Debug\Proyecto_0.exe
