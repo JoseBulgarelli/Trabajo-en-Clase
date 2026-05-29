@@ -23,6 +23,7 @@ import java.awt.event.ComponentEvent;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
 
 public class Principal {
 
@@ -41,6 +42,7 @@ public class Principal {
 	private JButton btnEditarProducto;
 	private JButton btnBorrarProducto;
 	private JTable tablaProductos;
+	private JTable tableOrdenes;
 
 	/**
 	 * Launch the application.
@@ -89,6 +91,11 @@ public class Principal {
 	
 	private void editarCliente() {
 		
+	}
+	
+	private void nuevaOrden() {
+		NuevaOrden ventanaNuevaOrden = new NuevaOrden();
+		ventanaNuevaOrden.setVisible(true);
 	}
 	
 	private void borrarCliente() {
@@ -308,6 +315,58 @@ public class Principal {
 		panelClientes.add(btnCargar);
 		panelOrdenes = new JPanel();
 		tabbedPane.addTab("Órdenes", null, panelOrdenes, null);
+		panelOrdenes.setLayout(null);
+		
+		JScrollPane scrollPane_2 = new JScrollPane();
+		scrollPane_2.setBounds(10, 10, 536, 291);
+		panelOrdenes.add(scrollPane_2);
+		
+		tableOrdenes = new JTable();
+		tableOrdenes.setFillsViewportHeight(true);
+		tableOrdenes.setModel(new DefaultTableModel(
+				new Object[][] {
+				},
+				new String[] {
+					"Número", "Fecha", "Estado"
+				}
+			) {
+				Class[] columnTypes = new Class[] {
+					Integer.class, String.class, String.class
+				};
+				public Class getColumnClass(int columnIndex) {
+					return columnTypes[columnIndex];
+				}
+			});
+		scrollPane_2.setViewportView(tableOrdenes);
+		
+		JButton btnNewButton = new JButton("Nueva");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				nuevaOrden();
+			}
+		});
+		btnNewButton.setBounds(556, 10, 107, 32);
+		panelOrdenes.add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("Detalle");
+		btnNewButton_1.setBounds(556, 52, 107, 32);
+		panelOrdenes.add(btnNewButton_1);
+		
+		JButton btnNewButton_2 = new JButton("Borrar");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnNewButton_2.setBounds(556, 94, 107, 32);
+		panelOrdenes.add(btnNewButton_2);
+		
+		JLabel lblNewLabel = new JLabel("Total pendiente: ");
+		lblNewLabel.setBounds(20, 326, 90, 22);
+		panelOrdenes.add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("New label");
+		lblNewLabel_1.setBounds(120, 331, 44, 12);
+		panelOrdenes.add(lblNewLabel_1);
 		
 		panelProductos = new JPanel();
 		panelProductos.addComponentListener(new ComponentAdapter() {
